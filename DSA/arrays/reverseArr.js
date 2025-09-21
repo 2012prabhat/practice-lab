@@ -9,4 +9,6 @@ function reverseArr(arr){
     return arr;
 }
 
-console.log(reverseArr([1,2,3,4,5,5,6,7]))
+let myArr = [110, 656, 78, 0, -100, 56, 74];
+let result = reverseArr(myArr);
+console.log(result);
