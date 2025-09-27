@@ -3,6 +3,7 @@ function prefixSum(arr){
     for(let i=0;i<arr.length;i++){
         sum += arr[i];
         arr[i] = sum;
+
     }
     return arr;
 }
