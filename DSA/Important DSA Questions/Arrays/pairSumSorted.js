@@ -8,7 +8,7 @@ Brute Force: Check all possible pairs using nested loops.
 Time Complexity: O(n²)
 */
 
-function pairSumSorted(nums, target) {
+function pairSumSorted1(nums, target) {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
             if (nums[i] + nums[j] === target) {
@@ -16,6 +16,25 @@ function pairSumSorted(nums, target) {
             }
         }
     }
+    return [];
+}
+
+
+// Optimized Approach - O(n)
+function pairSumSorted(nums, target) {
+   let left = 0;
+   let right = nums.length-1;
+   while(left<right){
+    let sum = nums[left]+nums[right];
+    if(sum===target){
+        return [left, right];
+    }
+    if(sum<target){
+        left++;
+    }else{
+        right--;
+    }
+   }
     return [];
 }
 
