@@ -22,7 +22,7 @@ Output: [[0, 0, 0]]
 */
 
 function threeSum(nums){
-    
+    console.log(nums);
 }
 
 // Test cases
