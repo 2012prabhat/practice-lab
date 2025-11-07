@@ -1,5 +1,4 @@
-
-let myName:string = "Prabhat Kumar"
+let myName: string = "Prabhat Kumar";
 console.log(myName);
 
 
