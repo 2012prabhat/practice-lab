@@ -1,7 +1,3 @@
-function printNum(num) {
-    console.log(num);
-}
-printNum(42);
 var Role;
 (function (Role) {
     Role[Role["Admin"] = 0] = "Admin";
