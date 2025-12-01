@@ -8,7 +8,7 @@ users = ['Test',10];
 console.log(users);
 
 let newUser:{
-    name:string;
+    name:string,
     age:number,
     other:null,
 } = {
@@ -18,3 +18,4 @@ let newUser:{
 }
 
 console.log(newUser);
+
