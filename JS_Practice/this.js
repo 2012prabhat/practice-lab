@@ -1,10 +1,5 @@
 
 
-function testFun(){
-    console.log(this)
-}
-
-// testFun()
 
 const user = {
   name: "Prabhat",
@@ -32,3 +27,13 @@ const newUser = new CreateUser("Prabhat Kumar",'Admin');
 console.log(newUser.name);
 
 newUser.greet()
+
+
+function testFunc(){
+    console.log(this.name)
+}
+
+testFunc.call({name:"test"});
+
+console.log([1,2] == [1,2])
+// testFunc()
