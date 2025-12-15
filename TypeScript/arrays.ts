@@ -19,3 +19,18 @@ let newUser:{
 
 console.log(newUser);
 
+
+
+let testObj:{
+    name:string,
+    age:any,
+    gender:string,
+    hobbies:(string|number)[]
+}  = {
+    name:'Prabhat Kunar',
+    age:28,
+    gender:'Male',
+    hobbies : ['Coding','Gym',1]
+}
+
+console.log(testObj)
