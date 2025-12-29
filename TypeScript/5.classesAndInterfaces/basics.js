@@ -6,4 +6,5 @@ var User = /** @class */ (function () {
     return User;
 }());
 var user1 = new User('Prabhat', 28);
+user1.name = "Test Username";
 console.log(user1);
