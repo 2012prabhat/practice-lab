@@ -1,42 +1,34 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback } from "react";
 
-function Debounce() {
-  const [searchVal, setSearchVal] = useState('');
 
-  // Pure debounce function (kept outside render)
-  const debounce = (fn, delay) => {
+
+
+
+function DebounceComp(){
+
+  const handleChange = (e)=>{
+    console.log(e.target.value);
+  }
+
+  const debounce =  function(func,delay){
     let timer;
-    return function (...args) {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        fn.apply(this, args);
-      }, delay);
-    };
-  };
+    return function(...args){
+      clearTimeout(timer)
+      timer = setTimeout(()=>{
+        func(...args)
+      },1000)
+    }
+  }
 
-  const handleSearch = (val) => {
-    console.log("Debounced:", val);
-  };
+  const useDebounceSearch = useCallback(debounce(handleChange,1000),[]);
 
-  // Create debounced function only once
-  const debounceSearch = useCallback(debounce(handleSearch, 500), []);
-
-  const onChangeHandler = (e) => {
-    setSearchVal(e.target.value);
-    debounceSearch(e.target.value);
-  };
 
   return (
-    <div className='ml-2'>
-      <input
-        className='border'
-        value={searchVal}
-        onChange={onChangeHandler}
-        type="text"
-        placeholder='search here'
-      />
-    </div>
-  );
+    <>
+  
+      <input className="border border-red-500" type="text" onChange={useDebounceSearch} />
+    </>
+)
 }
 
-export default Debounce;
+export default DebounceComp;
