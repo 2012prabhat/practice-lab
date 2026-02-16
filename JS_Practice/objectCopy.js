@@ -24,3 +24,36 @@ const deep = structuredClone(myDetails);
 console.log(deep) // Best way
 
 console.log(myDetails.hasOwnProperty("name"))
+
+
+function deepCopy(value){
+    if(value===null || typeof value !== "object"){
+        return value;
+    }
+    let copy;
+    if(Array.isArray(value)){
+        copy = [];
+    }else{
+        copy = {};
+    }
+    for(let key in value){
+        copy[key] = deepCopy(value[key])
+    }
+    return copy;
+}
+
+
+
+
+function deepCopy(value){
+    if(value===null || typeof value !== 'object'){
+        return value;
+    }
+
+    const result = Array.isArray(value)?[]:{};
+    let copy;
+    for(let key in result){
+        result[key] = deepCopy(value[key]);
+    }
+    return copy;
+}
